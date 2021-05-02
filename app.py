@@ -67,11 +67,11 @@ def my_form_post():
         target = get_predictions(age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal, req_model)
 
         if target==1:
-            sale_making = 'Customer is likely to have heart disease'
+            outcome = 'Customer is likely to have heart disease'
         else:
-            sale_making = 'Customer is unlikely to have heart disease'
+            outcome = 'Customer is unlikely to have heart disease'
 
-        return render_template('home.html', target = target, sale_making = sale_making)
+        return render_template('home.html', target = target, outcome = outcome)
     else:
         return render_template('home.html')
 
